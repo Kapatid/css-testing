@@ -75,6 +75,31 @@ body #exhibit-2 button {
   background-color: transparent;
 }
 
+@media (min-width: 35em) {
+  body #exhibit-1,
+  body #exhibit-2 {
+    max-width: 60%;
+  }
+  body #exhibit-1 button,
+  body #exhibit-2 button {
+    margin: 1rem 3rem;
+  }
+}
+
+@media (max-width: 35em) {
+  body #exhibit-1 div,
+  body #exhibit-2 div {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
+  body #exhibit-1 div button,
+  body #exhibit-2 div button {
+    width: 80%;
+    margin: 1rem 0;
+  }
+}
+
 body #nav-toggle {
   position: absolute;
   visibility: hidden;
@@ -237,7 +262,7 @@ body #theme-select #slider #handle {
 body #navbar {
   top: 0;
   z-index: 5;
-  width: 400px;
+  min-width: 312px;
   height: 100vh;
   background-color: #fafafa;
   display: none;
@@ -247,6 +272,21 @@ body #navbar {
   border-right: 1px solid #212121;
   -webkit-transition: background-color 0.4s ease-out;
   transition: background-color 0.4s ease-out;
+}
+
+@media (min-width: 35em) {
+  body #navbar {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+@media (max-width: 35em) {
+  body #navbar {
+    top: 0;
+    position: fixed;
+    max-width: 300px;
+  }
 }
 
 body #navbar #logo {
@@ -377,39 +417,5 @@ body #container-sections #exhibit-2 #btn-bottom::before {
 
 body #container-sections #exhibit-2 #btn-bottom:hover::before {
   top: 0;
-}
-
-@media (min-width: 35em) {
-  #exhibit-1,
-  #exhibit-2 {
-    max-width: 60%;
-  }
-  #exhibit-1 button,
-  #exhibit-2 button {
-    margin: 1rem 3rem;
-  }
-  #navbar {
-    position: -webkit-sticky;
-    position: sticky;
-  }
-}
-
-@media (max-width: 35em) {
-  #exhibit-1 div,
-  #exhibit-2 div {
-    display: -ms-grid;
-    display: grid;
-    place-items: center;
-  }
-  #exhibit-1 div button,
-  #exhibit-2 div button {
-    width: 80%;
-    margin: 1rem 0;
-  }
-  #navbar {
-    top: 0;
-    position: fixed;
-    max-width: 300px;
-  }
 }
 /*# sourceMappingURL=app.css.map */
