@@ -1,0 +1,119 @@
+#theme-toggle {
+  position: absolute;
+  visibility: hidden;
+
+  &:checked {
+    ~ #theme-select {
+      .icon-light {
+        background-color: $primary;
+      }
+      #slider {
+        background-color: $secondary;
+        border-color: $primary;
+
+        #handle {
+          margin-left: 56%;
+        }
+      }
+      .icon-dark {
+        background-color: $primary;
+      }
+    }
+
+    ~ #icon-menu {
+      .line {
+        background-color: $primary;
+      }
+    }
+
+    ~ #navbar {
+      a,
+      ul,
+      li {
+        color: $primary;
+      }
+      border-right-color: $primary;
+      background-color: $secondary;
+
+      #nav-links {
+        a::before {
+          background-color: $primary;
+        }
+      }
+    }
+
+    ~ .bg {
+      background-color: $secondary;
+    }
+
+    ~ #container-sections {
+      #exhibit-1,
+      #exhibit-2 {
+        color: $primary;
+        button {
+          color: $primary;
+          border: 3px solid $primary;
+        }
+      }
+
+      #exhibit-1 {
+        div {
+          &:hover > button:not(:hover) {
+            color: $secondary;
+            background-color: $primary;
+          }
+        }
+      }
+      #exhibit-2 {
+        button {
+          &:hover {
+            color: $secondary;
+          }
+          &::before {
+            background-color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+#theme-select {
+  top: 7px;
+  left: 160px;
+  z-index: 10;
+  height: 80px;
+  width: 110px;
+  position: fixed;
+  display: none;
+  align-items: center;
+
+  .icon-light {
+    @extend .icon-light-mode;
+  }
+
+  #slider {
+    height: 15px;
+    width: 80px;
+    border: 3px solid $secondary;
+    border-radius: 30px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    #handle {
+      height: 12px;
+      width: 12px;
+      // margin-left: 56%;
+      background-color: $primary;
+      border-radius: 50%;
+      border: 2.5px solid $secondary;
+      transition: margin 0.4s ease-out;
+    }
+  }
+
+  .icon-dark {
+    @extend .icon-dark-mode;
+  }
+}

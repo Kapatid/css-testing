@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- prevent (404) for favicon.ico -->
+    <link rel="icon" href="data:;base64,=" />
+    <title>CSS Testing</title>
+    <link rel="stylesheet" href="./dist/css/app.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <input type="checkbox" id="nav-toggle" />
+    <input type="checkbox" id="theme-toggle" />
+    <div id="theme-select">
+      <div class="icon-light"></div>
+      <label for="theme-toggle" id="slider">
+        <div id="handle"></div>
+      </label>
+      <div class="icon-dark"></div>
+    </div>
+    <label for="nav-toggle" id="icon-menu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </label>
+
+    <nav id="navbar">
+      <a href="#HOME" id="logo"> CSS Tricks </a>
+
+      <ul id="nav-links">
+        <li><a href="#exhibit-1">Animate Others</a></li>
+        <li><a href="#exhibit-2">Slide In</a></li>
+      </ul>
+    </nav>
+    <!-- End of NAVBAR -->
+
+    <div id="container-sections">
+      <section id="exhibit-1">
+        <div>
+          <h1>Animate other elements</h1>
+          <button>BUTTON 1</button>
+          <button>BUTTON 2</button>
+          <button>BUTTON 3</button>
+        </div>
+      </section>
+
+      <section id="exhibit-2">
+        <div>
+          <h1>Slide in animations</h1>
+          <button id="btn-left">LEFT</button>
+          <button id="btn-top">TOP</button>
+          <button id="btn-right">RIGHT</button>
+          <button id="btn-bottom">BOTTOM</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="bg"></div>
+  </body>
+</html>

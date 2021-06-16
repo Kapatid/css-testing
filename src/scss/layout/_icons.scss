@@ -1,0 +1,16 @@
+.icon-dark-mode {
+  height: 48px;
+  width: 48px;
+  background-color: $secondary;
+  -webkit-mask: url(../img/dark_mode_black_48dp.svg) no-repeat center;
+  mask: url(../img/dark_mode_black_48dp.svg) no-repeat center;
+  mask-size: 27px 27px;
+}
+.icon-light-mode {
+  height: 48px;
+  width: 48px;
+  background-color: $secondary;
+  -webkit-mask: url(../img/wb_sunny_black_48dp.svg) no-repeat center;
+  mask: url(../img/wb_sunny_black_48dp.svg) no-repeat center;
+  mask-size: 25px 25px;
+}

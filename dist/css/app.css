@@ -1,0 +1,415 @@
+.icon-dark-mode, body #theme-select .icon-dark {
+  height: 48px;
+  width: 48px;
+  background-color: #212121;
+  -webkit-mask: url(../img/dark_mode_black_48dp.svg) no-repeat center;
+  mask: url(../img/dark_mode_black_48dp.svg) no-repeat center;
+  -webkit-mask-size: 27px 27px;
+          mask-size: 27px 27px;
+}
+
+.icon-light-mode, body #theme-select .icon-light {
+  height: 48px;
+  width: 48px;
+  background-color: #212121;
+  -webkit-mask: url(../img/wb_sunny_black_48dp.svg) no-repeat center;
+  mask: url(../img/wb_sunny_black_48dp.svg) no-repeat center;
+  -webkit-mask-size: 25px 25px;
+          mask-size: 25px 25px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serifs;
+  position: relative;
+}
+
+body .bg {
+  width: inherit;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fafafa;
+  -webkit-transition: background-color 0.4s ease-out;
+  transition: background-color 0.4s ease-out;
+}
+
+body #exhibit-1,
+body #exhibit-2 {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+body #exhibit-1 h1,
+body #exhibit-2 h1 {
+  font-style: italic;
+  padding: 1.5em;
+}
+
+body #exhibit-1 button,
+body #exhibit-2 button {
+  padding: 1em 3em;
+  cursor: pointer;
+  width: 12em;
+  font-weight: bold;
+  font-size: 1em;
+  border: 3px solid #212121;
+  background-color: transparent;
+}
+
+body #nav-toggle {
+  position: absolute;
+  visibility: hidden;
+}
+
+body #nav-toggle:checked ~ #theme-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #nav-toggle:checked ~ #navbar {
+  display: -ms-grid;
+  display: grid;
+}
+
+body #nav-toggle:checked ~ #icon-menu :first-child {
+  position: fixed;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+body #nav-toggle:checked ~ #icon-menu :nth-child(2) {
+  display: none;
+  -webkit-transition: display 0.5s linear;
+  transition: display 0.5s linear;
+}
+
+body #nav-toggle:checked ~ #icon-menu :last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+body #icon-menu {
+  display: block;
+  position: fixed;
+  cursor: pointer;
+  top: 40px;
+  left: 40px;
+  z-index: 10;
+}
+
+body #icon-menu .line {
+  height: 3px;
+  width: 30px;
+  background-color: #212121;
+  border-radius: 2px;
+  margin: 5px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+body #theme-toggle {
+  position: absolute;
+  visibility: hidden;
+}
+
+body #theme-toggle:checked ~ #theme-select .icon-light {
+  background-color: #fafafa;
+}
+
+body #theme-toggle:checked ~ #theme-select #slider {
+  background-color: #212121;
+  border-color: #fafafa;
+}
+
+body #theme-toggle:checked ~ #theme-select #slider #handle {
+  margin-left: 56%;
+}
+
+body #theme-toggle:checked ~ #theme-select .icon-dark {
+  background-color: #fafafa;
+}
+
+body #theme-toggle:checked ~ #icon-menu .line {
+  background-color: #fafafa;
+}
+
+body #theme-toggle:checked ~ #navbar {
+  border-right-color: #fafafa;
+  background-color: #212121;
+}
+
+body #theme-toggle:checked ~ #navbar a,
+body #theme-toggle:checked ~ #navbar ul,
+body #theme-toggle:checked ~ #navbar li {
+  color: #fafafa;
+}
+
+body #theme-toggle:checked ~ #navbar #nav-links a::before {
+  background-color: #fafafa;
+}
+
+body #theme-toggle:checked ~ .bg {
+  background-color: #212121;
+}
+
+body #theme-toggle:checked ~ #container-sections #exhibit-1,
+body #theme-toggle:checked ~ #container-sections #exhibit-2 {
+  color: #fafafa;
+}
+
+body #theme-toggle:checked ~ #container-sections #exhibit-1 button,
+body #theme-toggle:checked ~ #container-sections #exhibit-2 button {
+  color: #fafafa;
+  border: 3px solid #fafafa;
+}
+
+body #theme-toggle:checked ~ #container-sections #exhibit-1 div:hover > button:not(:hover) {
+  color: #212121;
+  background-color: #fafafa;
+}
+
+body #theme-toggle:checked ~ #container-sections #exhibit-2 button:hover {
+  color: #212121;
+}
+
+body #theme-toggle:checked ~ #container-sections #exhibit-2 button::before {
+  background-color: #fafafa;
+}
+
+body #theme-select {
+  top: 7px;
+  left: 160px;
+  z-index: 10;
+  height: 80px;
+  width: 110px;
+  position: fixed;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #theme-select #slider {
+  height: 15px;
+  width: 80px;
+  border: 3px solid #212121;
+  border-radius: 30px;
+  margin: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+body #theme-select #slider #handle {
+  height: 12px;
+  width: 12px;
+  background-color: #fafafa;
+  border-radius: 50%;
+  border: 2.5px solid #212121;
+  -webkit-transition: margin 0.4s ease-out;
+  transition: margin 0.4s ease-out;
+}
+
+body #navbar {
+  top: 0;
+  z-index: 5;
+  width: 400px;
+  height: 100vh;
+  background-color: #fafafa;
+  display: none;
+  justify-items: center;
+  -ms-grid-rows: 0.8fr 3fr;
+      grid-template-rows: 0.8fr 3fr;
+  border-right: 1px solid #212121;
+  -webkit-transition: background-color 0.4s ease-out;
+  transition: background-color 0.4s ease-out;
+}
+
+body #navbar #logo {
+  margin-top: 110px;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #212121;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body #navbar #nav-links {
+  width: 60%;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+body #navbar #nav-links a,
+body #navbar #nav-links li {
+  pointer-events: auto;
+  margin: 1.2em 0;
+  list-style-type: none;
+  text-decoration: none;
+  color: #212121;
+}
+
+body #navbar #nav-links a {
+  position: relative;
+}
+
+body #navbar #nav-links a::before {
+  z-index: -1;
+  position: absolute;
+  left: -100%;
+  top: 100%;
+  content: "";
+  height: 1.8px;
+  width: 100%;
+  background-color: #212121;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+body #navbar #nav-links a:hover::before {
+  left: 0;
+}
+
+body #container-sections {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+body #container-sections #exhibit-1 {
+  pointer-events: none;
+}
+
+body #container-sections #exhibit-1 div button {
+  pointer-events: auto;
+  -webkit-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+}
+
+body #container-sections #exhibit-1 div:hover > button:not(:hover) {
+  color: white;
+  background-color: black;
+}
+
+body #container-sections #exhibit-2 button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+body #container-sections #exhibit-2 button:hover {
+  color: #fafafa;
+}
+
+body #container-sections #exhibit-2 button::before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: #212121;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+body #container-sections #exhibit-2 #btn-left::before {
+  top: 0;
+  left: -100%;
+}
+
+body #container-sections #exhibit-2 #btn-left:hover::before {
+  left: 0;
+}
+
+body #container-sections #exhibit-2 #btn-top::before {
+  top: -100%;
+  left: 0;
+}
+
+body #container-sections #exhibit-2 #btn-top:hover::before {
+  top: 0;
+}
+
+body #container-sections #exhibit-2 #btn-right::before {
+  top: 0;
+  left: 100%;
+}
+
+body #container-sections #exhibit-2 #btn-right:hover::before {
+  left: 0;
+}
+
+body #container-sections #exhibit-2 #btn-bottom::before {
+  top: 100%;
+  left: 0;
+}
+
+body #container-sections #exhibit-2 #btn-bottom:hover::before {
+  top: 0;
+}
+
+@media (min-width: 35em) {
+  #exhibit-1,
+  #exhibit-2 {
+    max-width: 60%;
+  }
+  #exhibit-1 button,
+  #exhibit-2 button {
+    margin: 1rem 3rem;
+  }
+  #navbar {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+@media (max-width: 35em) {
+  #exhibit-1 div,
+  #exhibit-2 div {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
+  #exhibit-1 div button,
+  #exhibit-2 div button {
+    width: 80%;
+    margin: 1rem 0;
+  }
+  #navbar {
+    top: 0;
+    position: fixed;
+    max-width: 300px;
+  }
+}
+/*# sourceMappingURL=app.css.map */
