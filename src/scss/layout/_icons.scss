@@ -14,3 +14,19 @@
   mask: url(../img/wb_sunny_black_48dp.svg) no-repeat center;
   mask-size: 25px 25px;
 }
+.icon-code {
+  height: 48px;
+  width: 48px;
+  background-color: $secondary;
+  -webkit-mask: url(../img/code_black_48dp.svg) no-repeat center;
+  mask: url(../img/code_black_48dp.svg) no-repeat center;
+  mask-size: 25px 25px;
+}
+.icon-dropdon {
+  height: 48px;
+  width: 48px;
+  background-color: $secondary;
+  -webkit-mask: url(../img/expand_more_black_48dp.svg) no-repeat center;
+  mask: url(../img/expand_more_black_48dp.svg) no-repeat center;
+  mask-size: 25px 25px;
+}

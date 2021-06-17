@@ -47,12 +47,44 @@
     }
 
     ~ #container-sections {
-      #exhibit-1,
-      #exhibit-2 {
+      [id*="exhibit-"] {
         color: $primary;
         button {
           color: $primary;
           border: 3px solid $primary;
+        }
+
+        [id*="code-toggle"] {
+          &:checked {
+            ~ .label-code {
+              border: transparent;
+            }
+          }
+        }
+
+        .label-code {
+          border: 2px solid $primary;
+
+          .tooltip {
+            color: $secondary;
+            background-color: $primary;
+
+            &::after {
+              border-color: transparent transparent $primary;
+            }
+          }
+
+          .icon-codes {
+            background-color: $primary;
+
+            & + div {
+              background-color: $primary;
+            }
+          }
+
+          .icon-dropdowns {
+            background-color: $primary;
+          }
         }
       }
 

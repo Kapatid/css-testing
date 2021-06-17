@@ -18,6 +18,26 @@
           mask-size: 25px 25px;
 }
 
+.icon-code, body [id*="exhibit-"] .label-code .icon-codes {
+  height: 48px;
+  width: 48px;
+  background-color: #212121;
+  -webkit-mask: url(../img/code_black_48dp.svg) no-repeat center;
+  mask: url(../img/code_black_48dp.svg) no-repeat center;
+  -webkit-mask-size: 25px 25px;
+          mask-size: 25px 25px;
+}
+
+.icon-dropdon, body [id*="exhibit-"] .label-code .icon-dropdowns {
+  height: 48px;
+  width: 48px;
+  background-color: #212121;
+  -webkit-mask: url(../img/expand_more_black_48dp.svg) no-repeat center;
+  mask: url(../img/expand_more_black_48dp.svg) no-repeat center;
+  -webkit-mask-size: 25px 25px;
+          mask-size: 25px 25px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -50,51 +70,151 @@ body .bg {
   transition: background-color 0.4s ease-out;
 }
 
-body #exhibit-1,
-body #exhibit-2 {
+body [id*="exhibit-"] {
   height: 100vh;
   display: -ms-grid;
   display: grid;
-  place-items: center;
 }
 
-body #exhibit-1 h1,
-body #exhibit-2 h1 {
+body [id*="exhibit-"] h1 {
+  -webkit-transition: margin 0.4s ease-out;
+  transition: margin 0.4s ease-out;
+  margin-top: 30%;
   font-style: italic;
   padding: 1.5em;
 }
 
-body #exhibit-1 button,
-body #exhibit-2 button {
+body [id*="exhibit-"] button {
   padding: 1em 3em;
   cursor: pointer;
   width: 12em;
+  border-radius: 30px;
   font-weight: bold;
   font-size: 1em;
   border: 3px solid #212121;
   background-color: transparent;
 }
 
+body [id*="exhibit-"] [id*="code-toggle"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+body [id*="exhibit-"] [id*="code-toggle"]:checked ~ .exhibit-content h1 {
+  margin-top: 15%;
+}
+
+body [id*="exhibit-"] [id*="code-toggle"]:checked ~ .codes {
+  height: 36vh;
+}
+
+body [id*="exhibit-"] [id*="code-toggle"]:checked ~ .label-code {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  border: transparent;
+}
+
+body [id*="exhibit-"] [id*="code-toggle"]:checked ~ .label-code:hover .tp-codes {
+  display: none;
+}
+
+body [id*="exhibit-"] [id*="code-toggle"]:checked ~ .label-code .icon-codes {
+  position: absolute;
+  visibility: hidden;
+}
+
+body [id*="exhibit-"] [id*="code-toggle"]:checked ~ .label-code .icon-codes + div {
+  position: absolute;
+  visibility: hidden;
+}
+
+body [id*="exhibit-"] .label-code {
+  cursor: pointer;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -ms-grid-columns: 3fr 0.1fr 1fr;
+      grid-template-columns: 3fr 0.1fr 1fr;
+  position: relative;
+  max-width: 80px;
+  height: 30px;
+  border: 2px solid #212121;
+  border-radius: 30px;
+  cursor: pointer;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  margin-bottom: 30%;
+}
+
+body [id*="exhibit-"] .label-code .icon-codes {
+  width: 20px;
+  height: 20px;
+}
+
+body [id*="exhibit-"] .label-code .icon-codes + div {
+  height: 100%;
+  width: 0.15em;
+  background-color: #212121;
+}
+
+body [id*="exhibit-"] .label-code .icon-dropdowns {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+body [id*="exhibit-"] .label-code:hover .tp-codes {
+  display: inline;
+}
+
+@media (max-width: 35em) {
+  body [id*="exhibit-"] .label-code {
+    margin-right: 20px;
+  }
+}
+
+body [id*="exhibit-"] .codes {
+  -webkit-transition: height 0.3s ease-out;
+  transition: height 0.3s ease-out;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  height: 0vh;
+  overflow-y: auto;
+  background-color: #272822;
+}
+
+body [id*="exhibit-"] .codes .line-numbers {
+  margin: 0;
+  border-radius: 0px;
+  -ms-grid-column-align: left;
+      justify-self: left;
+}
+
+@media (max-width: 35em) {
+  body [id*="exhibit-"] .codes {
+    display: inline;
+  }
+}
+
 @media (min-width: 35em) {
-  body #exhibit-1,
-  body #exhibit-2 {
+  body [id*="exhibit-"] {
     max-width: 60%;
   }
-  body #exhibit-1 button,
-  body #exhibit-2 button {
+  body [id*="exhibit-"] button {
     margin: 1rem 3rem;
   }
 }
 
 @media (max-width: 35em) {
-  body #exhibit-1 div,
-  body #exhibit-2 div {
+  body [id*="exhibit-"] div {
     display: -ms-grid;
     display: grid;
     place-items: center;
   }
-  body #exhibit-1 div button,
-  body #exhibit-2 div button {
+  body [id*="exhibit-"] div button {
     width: 80%;
     margin: 1rem 0;
   }
@@ -197,15 +317,42 @@ body #theme-toggle:checked ~ .bg {
   background-color: #212121;
 }
 
-body #theme-toggle:checked ~ #container-sections #exhibit-1,
-body #theme-toggle:checked ~ #container-sections #exhibit-2 {
+body #theme-toggle:checked ~ #container-sections [id*="exhibit-"] {
   color: #fafafa;
 }
 
-body #theme-toggle:checked ~ #container-sections #exhibit-1 button,
-body #theme-toggle:checked ~ #container-sections #exhibit-2 button {
+body #theme-toggle:checked ~ #container-sections [id*="exhibit-"] button {
   color: #fafafa;
   border: 3px solid #fafafa;
+}
+
+body #theme-toggle:checked ~ #container-sections [id*="exhibit-"] [id*="code-toggle"]:checked ~ .label-code {
+  border: transparent;
+}
+
+body #theme-toggle:checked ~ #container-sections [id*="exhibit-"] .label-code {
+  border: 2px solid #fafafa;
+}
+
+body #theme-toggle:checked ~ #container-sections [id*="exhibit-"] .label-code .tooltip {
+  color: #212121;
+  background-color: #fafafa;
+}
+
+body #theme-toggle:checked ~ #container-sections [id*="exhibit-"] .label-code .tooltip::after {
+  border-color: transparent transparent #fafafa;
+}
+
+body #theme-toggle:checked ~ #container-sections [id*="exhibit-"] .label-code .icon-codes {
+  background-color: #fafafa;
+}
+
+body #theme-toggle:checked ~ #container-sections [id*="exhibit-"] .label-code .icon-codes + div {
+  background-color: #fafafa;
+}
+
+body #theme-toggle:checked ~ #container-sections [id*="exhibit-"] .label-code .icon-dropdowns {
+  background-color: #fafafa;
 }
 
 body #theme-toggle:checked ~ #container-sections #exhibit-1 div:hover > button:not(:hover) {
@@ -347,17 +494,17 @@ body #container-sections {
   place-items: center;
 }
 
-body #container-sections #exhibit-1 {
+body #container-sections #exhibit-1 .exhibit-content {
   pointer-events: none;
 }
 
-body #container-sections #exhibit-1 div button {
+body #container-sections #exhibit-1 .exhibit-content button {
   pointer-events: auto;
   -webkit-transition: background-color 0.3s ease-out;
   transition: background-color 0.3s ease-out;
 }
 
-body #container-sections #exhibit-1 div:hover > button:not(:hover) {
+body #container-sections #exhibit-1 .exhibit-content:hover > button:not(:hover) {
   color: white;
   background-color: black;
 }
@@ -417,5 +564,37 @@ body #container-sections #exhibit-2 #btn-bottom::before {
 
 body #container-sections #exhibit-2 #btn-bottom:hover::before {
   top: 0;
+}
+
+.tooltip {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  position: absolute;
+  top: -38px;
+  padding: 0.7em;
+  font-size: 0.6em;
+  font-weight: bold;
+  color: #fafafa;
+  background-color: #21212198;
+  border-radius: 30px;
+  display: none;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  right: 43%;
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 6px 6px 6px;
+  border-color: transparent transparent #21212198;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 /*# sourceMappingURL=app.css.map */

@@ -44,13 +44,13 @@ body {
   }
 
   // DEFAULT STYLES
-  #exhibit-1,
-  #exhibit-2 {
+  [id*="exhibit-"] {
     height: 100vh;
     display: grid;
-    place-items: center;
 
     h1 {
+      transition: margin 0.4s ease-out;
+      margin-top: 30%;
       font-style: italic;
       padding: 1.5em;
     }
@@ -59,12 +59,15 @@ body {
       padding: 1em 3em;
       cursor: pointer;
       width: 12em;
+      border-radius: 30px;
 
       font-weight: bold;
       font-size: 1em;
       border: 3px solid $secondary;
       background-color: transparent;
     }
+
+    @import "./layout/codes";
 
     @include responsive_desktop() {
       max-width: 60%;
@@ -97,9 +100,8 @@ body {
 
     // ANIMATE OTHERS
     #exhibit-1 {
-      pointer-events: none;
-
-      div {
+      .exhibit-content {
+        pointer-events: none;
         button {
           pointer-events: auto;
           transition: background-color 0.3s ease-out;
@@ -138,10 +140,8 @@ body {
           top: 0;
           left: -100%;
         }
-        &:hover {
-          &::before {
-            left: 0;
-          }
+        &:hover::before {
+          left: 0;
         }
       }
 
@@ -150,10 +150,8 @@ body {
           top: -100%;
           left: 0;
         }
-        &:hover {
-          &::before {
-            top: 0;
-          }
+        &:hover::before {
+          top: 0;
         }
       }
 
@@ -162,10 +160,8 @@ body {
           top: 0;
           left: 100%;
         }
-        &:hover {
-          &::before {
-            left: 0;
-          }
+        &:hover::before {
+          left: 0;
         }
       }
 
@@ -174,13 +170,39 @@ body {
           top: 100%;
           left: 0;
         }
-        &:hover {
-          &::before {
-            top: 0;
-          }
+        &:hover::before {
+          top: 0;
         }
       }
     }
+  }
+}
+
+// ==== TOOLTIPS ====
+.tooltip {
+  width: max-content;
+  height: max-content;
+  position: absolute;
+  top: -38px;
+  padding: 0.7em;
+  font-size: 0.6em;
+  font-weight: bold;
+  color: $primary;
+  background-color: #21212198;
+  border-radius: 30px;
+  display: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 43%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 6px 6px;
+    border-color: transparent transparent #21212198;
+    transform: rotate(180deg);
   }
 }
 

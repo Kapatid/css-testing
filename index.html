@@ -7,7 +7,10 @@
     <!-- prevent (404) for favicon.ico -->
     <link rel="icon" href="data:;base64,=" />
     <title>CSS Testing</title>
+
     <link rel="stylesheet" href="./dist/css/app.css" />
+    <link href="./vendor/prismjs/prism.css" rel="stylesheet" />
+    
   </head>
   <body>
     <!-- NAVBAR -->
@@ -38,25 +41,136 @@
 
     <div id="container-sections">
       <section id="exhibit-1">
-        <div>
+        <input type="checkbox" id="code-toggle1" />
+
+        <div class="exhibit-content">
           <h1>Animate other elements</h1>
           <button>BUTTON 1</button>
           <button>BUTTON 2</button>
           <button>BUTTON 3</button>
         </div>
+
+        <div class="codes">
+          <pre class="line-numbers"><code class="language-html match-braces">  &lt;!--HTML--&gt;
+  &lt;div class="exhibit-content">
+    &lt;h1>Animate other elements</h1>
+    &lt;button>BUTTON 1</button>
+    &lt;button>BUTTON 2</button>
+    &lt;button>BUTTON 3</button>
+  &lt;/div></code></pre>
+
+          <pre class="line-numbers"><code class="language-css match-braces">  /* CSS */
+  .exhibit-content {
+    pointer-events: none;
+  }
+  
+  .exhibit-content button {
+    pointer-events: auto;
+    transition: background-color 0.3s ease-out;
+  }
+  
+  .exhibit-content:hover > button:not(:hover) {
+    color: white;
+    background-color: black;
+  }
+          </code></pre>
+        </div>
+
+        <label for="code-toggle1" class="label-code">
+          <div class="tooltip tp-codes">Show codes</div>
+          <div class="icon-codes"></div>
+          <div></div>
+          <div class="icon-dropdowns"></div>
+        </label>
       </section>
 
       <section id="exhibit-2">
-        <div>
+        <input type="checkbox" id="code-toggle2" />
+        <div class="exhibit-content">
           <h1>Slide in animations</h1>
           <button id="btn-left">LEFT</button>
           <button id="btn-top">TOP</button>
           <button id="btn-right">RIGHT</button>
           <button id="btn-bottom">BOTTOM</button>
         </div>
+
+        <div class="codes">
+          <pre class="line-numbers"><code class="language-html match-braces">  &lt;!--HTML--&gt;
+  &lt;div class="exhibit-content">
+    &lt;h1>Slide in animations&lt;/h1>
+    &lt;button id="btn-left">LEFT&lt;/button>
+    &lt;button id="btn-right">RIGHT&lt;/button>
+    &lt;button id="btn-right">RIGHT&lt;/button>
+    &lt;button id="btn-bottom">BOTTOM&lt;/button>
+  &lt;/div>
+          </code></pre>
+
+          <pre class="line-numbers"><code class="language-css match-braces">  /* CSS */
+  button {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  button:hover {
+    color: white;
+  }
+  
+  button::before {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    transition: all 0.4s ease-out;
+  }
+  
+  #btn-left::before {
+    top: 0;
+    left: -100%;
+  }
+  #btn-left:hover::before {
+    left: 0;
+  }
+  
+  #btn-top::before {
+    top: -100%;
+    left: 0;
+  }
+  #btn-top:hover::before {
+    top: 0;
+  }
+  
+  #btn-right::before {
+    top: 0;
+    left: 100%;
+  }
+  #btn-right:hover::before {
+    left: 0;
+  }
+  
+  #btn-bottom::before {
+    top: 100%;
+    left: 0;
+  }
+  #btn-bottom:hover::before {
+    top: 0;
+  }
+          </code></pre>
+        </div>
+
+        <label for="code-toggle2" class="label-code">
+          <div class="tooltip tp-codes">Show codes</div>
+          <div class="icon-codes"></div>
+          <div></div>
+          <div class="icon-dropdowns"></div>
+        </label>
       </section>
     </div>
 
     <div class="bg"></div>
+
+    <script src="./vendor/prismjs/prism.js"></script>
   </body>
 </html>
