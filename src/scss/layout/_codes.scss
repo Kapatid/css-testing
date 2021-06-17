@@ -74,11 +74,13 @@
       display: inline;
     }
   }
+
   @include responsive_mobile() {
     margin-right: 20px;
 
     .tp-codes {
       display: none;
+      visibility: hidden;
     }
   }
 }
