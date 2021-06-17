@@ -173,6 +173,9 @@ body [id*="exhibit-"] .label-code:hover .tp-codes {
   body [id*="exhibit-"] .label-code {
     margin-right: 20px;
   }
+  body [id*="exhibit-"] .label-code .tp-codes {
+    display: none;
+  }
 }
 
 body [id*="exhibit-"] .codes {
@@ -196,6 +199,7 @@ body [id*="exhibit-"] .codes .line-numbers {
 @media (max-width: 35em) {
   body [id*="exhibit-"] .codes {
     display: inline;
+    font-size: 0.6em;
   }
 }
 

@@ -74,9 +74,12 @@
       display: inline;
     }
   }
-
   @include responsive_mobile() {
     margin-right: 20px;
+
+    .tp-codes {
+      display: none;
+    }
   }
 }
 
@@ -98,5 +101,7 @@
 
   @include responsive_mobile() {
     display: inline;
+
+    font-size: 0.6em;
   }
 }
